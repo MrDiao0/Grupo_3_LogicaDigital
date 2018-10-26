@@ -13,11 +13,9 @@ begin
 	process(y,shift) is
 	begin
 		if(shift='1')then
-			w(3) <= '0';
-			w(2) <= y(3);
-			w(1) <= y(2);
-			w(0) <= y(1);
+			w <= ('0',y(3),y(2),y(1));
+		else
+			w <= y;
 		end if;			
 	end process;
-
 end architecture;
